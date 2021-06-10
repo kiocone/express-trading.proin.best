@@ -1,0 +1,21 @@
+<h1 class="text-center">Historial de posiciones</h1>
+
+
+<div class="container p-4">
+    <div class="row">
+
+        {{#each historial}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">{{monto}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{fecha_reg}}</h6>
+                    <h6 class="card-subtitle mb-2 {{isAnuladoColor activo}} rounded">{{isAnulado activo}}</h6>
+                    <a class="btn btn-success" href="/posiciones/detalles/{{id}}">Detalles</a>
+                </div>
+            </div>
+            <div class="card-body"></div>
+        </div>
+        {{/each}}
+    </div>
+</div>

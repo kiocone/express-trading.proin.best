@@ -1,0 +1,28 @@
+{{!-- <h1 class="text-center">Lista de posiciones</h1> --}}
+<h3>Capital Activo: USD {{capital.suma_monto}} en {{capital.count_activo}} posiciones activas</h3> 
+
+<div class="container p-4">
+    <div class="row">
+
+        {{#each posiciones}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">{{monto}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{fecha_reg}}</h6>
+                    <h6 class="card-subtitle mb-2 {{isActiveColor activo}} rounded">{{isActive activo}}</h6>
+                    <a class="btn btn-success" href="/posiciones/detalles/{{id}}">Detalles</a>
+                </div>
+            </div>
+            <div class="card-body"></div>
+        </div>
+        {{/each}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <p><a class="btn btn-success" href="/posiciones/add">Nueva Posición</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

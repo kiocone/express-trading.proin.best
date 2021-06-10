@@ -1,0 +1,41 @@
+<div class="continer p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/profile/edit" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" value="{{usuario.username}}" placeholder="User name" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nombre1" value="{{usuario.nombre1}}" placeholder="Primer nombre">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nombre2" value="{{usuario.nombre2}}" placeholder="Segundo nombre">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="apellido1" value="{{usuario.apellido1}}" placeholder="Primer apellido">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="apellido2" value="{{usuario.apellido2}}" placeholder="Segundo apellido">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" value="{{usuario.email}}" placeholder="E-Mail">
+                        </div>
+                        <div class="form-group">
+                            <input type="phone" class="form-control" name="telefono" value="{{usuario.telefono}}" placeholder="Teléfono">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="direccion" placeholder="Dirección" rows="2">{{usuario.direccion}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Guardar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
