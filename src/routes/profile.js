@@ -7,14 +7,14 @@ const user_id = 1
 
 router.get('/',async (req,res) => {
     const user_id = 1
-    const res_usuario = await pool.query('select * from users where id = ?', user_id)
+    const res_usuario = await pool.query('select * from trade_users where id = ?', user_id)
     console.log(res_usuario)
     res.render('profile/profile', {usuario: res_usuario[0]})
 })
 
 router.get('/edit', async (req,res) => {
     
-    const res_usuario = await pool.query('select * from users where id = ?', user_id)
+    const res_usuario = await pool.query('select * from trade_users where id = ?', user_id)
     console.log("Get", res_usuario)
     res.render('profile/edit', {usuario: res_usuario[0]})
 })
@@ -31,7 +31,7 @@ router.post('/edit', async (req, res) => {
         telefono, 
         direccion
     }
-    await pool.query('update users set ?  where id = ?', [update_user, user_id] )
+    await pool.query('update trade_users set ?  where id = ?', [update_user, user_id] )
     console.log("Post", update_user)
     res.redirect('/profile')
 })

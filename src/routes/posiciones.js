@@ -6,8 +6,8 @@ const fechaHoy = require('../lib/fechaHoy')
 const user_id = 1
 
 router.get('/', async (req, res) => {
-    const posiciones = await pool.query('SELECT * FROM posiciones WHERE visible = 1')
-    const res_activos = await pool.query('SELECT SUM(monto) AS suma_monto, COUNT(activo) AS count_activo FROM posiciones where activo = 1 AND visible = 1 AND user_id = ?', user_id)
+    const posiciones = await pool.query('SELECT * FROM trade_posiciones WHERE visible = 1')
+    const res_activos = await pool.query('SELECT SUM(monto) AS suma_monto, COUNT(activo) AS count_activo FROM trade_posiciones where activo = 1 AND visible = 1 AND user_id = ?', user_id)
     res.render('posiciones/posiciones', {posiciones, capital: res_activos[0]})
 })
 
@@ -29,31 +29,31 @@ router.post('/add', async (req, res) => {
 
     console.log(newPosicion)
 
-    await pool.query('INSERT INTO posiciones set ?', [newPosicion])
+    await pool.query('INSERT INTO trade_posiciones set ?', [newPosicion])
     req.flash('success', 'Pocisión agregada')
     res.redirect('/posiciones')
 })
 
 router.get('/detalles/:id', async ( req, res ) => {
     const {id} = req.params
-    const detalle = await pool.query('SELECT * FROM posiciones WHERE id = ?', id)
+    const detalle = await pool.query('SELECT * FROM trade_posiciones WHERE id = ?', id)
     res.render('posiciones/detalles', {detalle: detalle[0]})
 })
 
 router.get('/detalles/anular/:id', async (req,res) => {
     const {id} = req.params
-    await pool.query('UPDATE posiciones set visible = 0 where id = ?', id)
+    await pool.query('UPDATE trade_posiciones set visible = 0 where id = ?', id)
     res.redirect('/posiciones')
 })
 
 router.get('/detalles/cerrar/:id', async (req,res) => {
     const {id} = req.params
-    await pool.query('UPDATE posiciones set visible = 0 where id = ?', id)
+    await pool.query('UPDATE trade_posiciones set visible = 0 where id = ?', id)
     res.redirect('/posiciones')
 })
 
 router.get('/historial', async (req,res) => {
-    const historial = await pool.query('SELECT * FROM posiciones WHERE visible = 0 AND user_id = ?', user_id)
+    const historial = await pool.query('SELECT * FROM trade_posiciones WHERE visible = 0 AND user_id = ?', user_id)
     res.render('posiciones/historial', {historial})
 })
 
