@@ -2,7 +2,7 @@ CREATE DATABASE db_trading;
 
 USE db_trading;
 
-CREATE TABLE users(
+CREATE TABLE trade_users(
     id INT(11) NOT NULL,
     username varchar(30) NOT NULL,
     password varchar(30) NOT NULL,
@@ -21,15 +21,16 @@ ALTER TABLE users MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
 
 DESCRIBE users;
 
-CREATE TABLE posiciones(
+CREATE TABLE trade_posiciones(
     id INT(11) NOT NULL,
     user_id INT(11) NOT NULL,
     fecha_reg varchar(10) NOT NULL,
     fecha_inicio varchar(10) NULL,
     monto DECIMAL(7,2) NOT NULL,
-    activo BOOLEAN NOT NULL
+    activo BOOLEAN NOT NULL,
+    visible BOOLEAN NOT NULL DEFAULT = 1
 );
 
-ALTER TABLE posiciones ADD PRIMARY KEY (id);
+ALTER TABLE trade_posiciones ADD PRIMARY KEY (id);
 
-ALTER TABLE posiciones MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
+ALTER TABLE trade_posiciones MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
