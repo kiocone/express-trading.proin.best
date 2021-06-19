@@ -43,12 +43,14 @@ router.get('/detalles/:id', async ( req, res ) => {
 router.get('/detalles/anular/:id', async (req,res) => {
     const {id} = req.params
     await pool.query('UPDATE trade_posiciones set visible = 0 where id = ?', id)
+    req.flash('success', 'Pocisión Anulada')
     res.redirect('/posiciones')
 })
 
 router.get('/detalles/cerrar/:id', async (req,res) => {
     const {id} = req.params
     await pool.query('UPDATE trade_posiciones set visible = 0 where id = ?', id)
+    req.flash('success', 'Pocisión Cerrada')
     res.redirect('/posiciones')
 })
 

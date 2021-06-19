@@ -33,6 +33,7 @@ router.post('/edit', async (req, res) => {
     }
     await pool.query('update trade_users set ?  where id = ?', [update_user, user_id] )
     console.log("Post", update_user)
+    req.flash('success', 'Datos de usuario actualizado')
     res.redirect('/profile')
 })
 
