@@ -59,6 +59,12 @@ router.get('/historial', async (req,res) => {
     res.render('posiciones/historial', {historial})
 })
 
+router.get('/historial_pos/:id', async (req,res) => {
+    const {id} = req.params
+    const detalle = await pool.query('SELECT * FROM trade_posiciones WHERE id = ?', id)
+    res.render('posiciones/historial_pos', {detalle: detalle[0]})
+})
+
 router.get('/datos/', async (req,res) => {
     res.render('posiciones/datos')
 })
