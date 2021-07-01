@@ -46,6 +46,7 @@ app.use(require('./routes/authentication'));
 app.use('/panel', require('./routes/panel'));
 app.use('/profile', require('./routes/profile'));
 app.use('/posiciones',require('./routes/posiciones'))
+app.use('/admin', require('./routes/admin'))
 
 
 //public

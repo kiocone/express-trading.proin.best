@@ -1,7 +1,5 @@
-{{!-- <h1 class="text-center">Lista de posiciones</h1> --}}
-<h3>Capital Activo: USD {{capital.suma_monto}} en {{capital.count_activo}} posiciones activas</h3> 
-
-<div class="container p-4">
+<div class="container">
+    <p class="text-center">{{capital.suma_monto}}...--...{{capital.count_activo}}</p>
     <div class="row">
         {{#each posiciones}}
         <div class="col-md-3">
@@ -16,12 +14,5 @@
             <div class="card-body"></div>
         </div>
         {{/each}}
-        <div class="col-md-3">
-            <div class="card text-center">
-                <div class="card-body">
-                    <p><a class="btn btn-success" href="/posiciones/add">Nueva Posición</a></p>
-                </div>
-            </div>
-        </div>
     </div>
 </div>

@@ -34,3 +34,15 @@ CREATE TABLE trade_posiciones(
 ALTER TABLE trade_posiciones ADD PRIMARY KEY (id);
 
 ALTER TABLE trade_posiciones MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
+
+CREATE TABLE datos_cuenta (
+    id INT(11) NOT NULL, 
+    banco varchar(50) NOT NULL, 
+    tipo varchar(20) NOT NULL, 
+    numero varchar(20) NOT NULL, 
+    descripcion varchar(100)
+);
+
+ALTER TABLE datos_cuenta ADD PRIMARY KEY (id);
+
+ALTER TABLE datos_cuenta MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
