@@ -8,4 +8,10 @@ router.get('/', async (req,res) => {
     res.render('admin/panel', {posiciones, capital: res_activos[0]})
 })
 
+router.get('/editar/:id', async (req,res) => {
+    const {id} = req.params
+    const res_posicion = await pool.query('select * from trade_posiciones where id = ?', id)
+    console.log(res_posicion[0])
+    res.render('admin/editar', {posicion: res_posicion[0]})
+})
 module.exports = router
