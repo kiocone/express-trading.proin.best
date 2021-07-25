@@ -14,4 +14,8 @@ router.get('/editar/:id', async (req,res) => {
     console.log(res_posicion[0])
     res.render('admin/editar', {posicion: res_posicion[0]})
 })
+
+router.post('/editar', async (req,res) => {
+    res.send('hola mundo editar admin')
+})
 module.exports = router

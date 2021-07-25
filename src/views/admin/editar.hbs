@@ -3,50 +3,58 @@
         <div class="col-md-6 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <table>
-                        <tr>
-                            <td>ID</td>
-                            <td class="ancho-full">
-                                <input class="ancho-full" type="text" name="" id="" value={{posicion.id}}>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>User ID</td>
-                            <td class="ancho-full">
-                                <input class="ancho-full" type="text" name="" id="" value={{posicion.user_id}}>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Registro</td>
-                            <td class="ancho-full">
-                                <input class="ancho-full" type="text" name="" id="" value={{posicion.fecha_reg}}>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Inicio</td>
-                            <td class="ancho-full">
-                                <input class="ancho-full" type="text" name="" id="" value={{posicion.fecha_inicio}}>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Monto</td>
-                            <td class="ancho-full">
-                                <input class="ancho-full" type="text" name="" id="" value={{posicion.monto}}>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Activo</td>
-                            <td class="ancho-full">
-                                <input class="ancho-full" type="text" name="" id="" value={{posicion.activo}}>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Visible</td>
-                            <td class="ancho-full">
-                                <input class="ancho-full" type="text" name="" id="" value={{posicion.visible}}>
-                            </td>
-                        </tr>
-                    </table>
+                    <form action="/admin/editar" method="post">
+                        <table>
+                            <tr>
+                                <td>ID</td>
+                                <td class="ancho-full">
+                                    <input class="ancho-full" type="text" name="" id="" value={{posicion.id}}>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>User ID</td>
+                                <td class="ancho-full">
+                                    <input class="ancho-full" type="text" name="" id="" value={{posicion.user_id}}>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Registro</td>
+                                <td class="ancho-full">
+                                    <input class="ancho-full" type="text" name="" id="" value={{posicion.fecha_reg}}>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Inicio</td>
+                                <td class="ancho-full">
+                                    <input class="ancho-full" type="text" name="" id="" value={{posicion.fecha_inicio}}>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Monto</td>
+                                <td class="ancho-full">
+                                    <input class="ancho-full" type="text" name="" id="" value={{posicion.monto}}>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Activo</td>
+                                <td class="ancho-full">
+                                    <input class="ancho-full" type="text" name="" id="" value={{posicion.activo}}>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Visible</td>
+                                <td class="ancho-full">
+                                    <input class="ancho-full" type="text" name="" id="" value={{posicion.visible}}>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center" colspan="2">
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                    <a class="btn btn-secondary" href="/admin">Cancelar</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>
