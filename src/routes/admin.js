@@ -16,6 +16,8 @@ router.get('/editar/:id', async (req,res) => {
 })
 
 router.post('/editar', async (req,res) => {
-    res.send('hola mundo editar admin')
+    const fields = req.body
+    await pool.query('update trade_posiciones set ?  where id = ?', [fields, fields.id] )
+    res.redirect('/admin')
 })
 module.exports = router
